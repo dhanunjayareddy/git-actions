@@ -1,0 +1,14 @@
+name: git-action-test
+
+on: [push]
+
+jobs:
+   run-shell-command:
+    runs-on: ubuntu-latest
+    steps: 
+     - name: echo string
+       run: echo "hello world"
+     - name: echo "multi line"
+       run: |
+        node -v
+        npm -v
