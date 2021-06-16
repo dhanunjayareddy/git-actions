@@ -13,8 +13,13 @@ jobs:
           ls
           pwd
           ls
-          docker build -t java-app .
-          docker images 
+          docker build -t dhanureddy/java-app:"${{ GITHUB_RUN_ID }}" .
+          docker images
+      - name: docker push 
+        run: |
+          docker push  dhanureddy/java-app:"${{ GITHUB_RUN_ID }}"
+      #for better usage need to add creds in secrets
+      
       # - name: simple actions
       #   id: greet
       #   uses: actions/hello-world-javascript-action@v1
