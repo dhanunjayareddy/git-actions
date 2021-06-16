@@ -8,6 +8,7 @@ jobs:
     steps:
       - name: list files
         uses: dhanunjayareddy/test-java@master
+      - name: build
         run: |
           ls
           pwd
