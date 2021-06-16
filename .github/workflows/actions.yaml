@@ -7,16 +7,14 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: list files
-        uses: dhanunjayareddy/test-java@master
+        uses: actions/checkout@master
       - name: build
         run: |
           ls
           pwd
           ls
-          cd test-java
-          pwd
-          docker build -t java-app .
-          docker images 
+          # docker build -t java-app .
+          # docker images 
       # - name: simple actions
       #   id: greet
       #   uses: actions/hello-world-javascript-action@v1
