@@ -7,19 +7,24 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: list files
+        uses: dhanunjayareddy/test-java@master
         run: |
           ls
           pwd
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
-          echo "${{ github.token }}"
-          #git clone  git@github:$GITHUB_REPOSITORY
           ls
-      - name: simple actions
-        id: greet
-        uses: actions/hello-world-javascript-action@v1
-        with: 
-          who-to-greet: dhanu
-      - name: log  greet time
-        run: echo "${{ steps.greet.outputs.time}}"
+          cd test-java
+          pwd
+          docker build -t java-app .
+          docker images
+      # - name: simple actions
+      #   id: greet
+      #   uses: actions/hello-world-javascript-action@v1
+      #   with: 
+      #     who-to-greet: dhanu
+      # - name: log  greet time
+      #   run: echo "${{ steps.greet.outputs.time}}"
+      ## echo $GITHUB_SHA
+      #     echo $GITHUB_REPOSITORY
+      #     echo $GITHUB_WORKSPACE
+      #     echo "${{ github.token }}"
+      #     #git clone  git@github:$GITHUB_REPOSITORY
