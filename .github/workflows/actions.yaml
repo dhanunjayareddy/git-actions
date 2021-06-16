@@ -16,7 +16,7 @@ jobs:
           cd test-java
           pwd
           docker build -t java-app .
-          docker images
+          docker images 
       # - name: simple actions
       #   id: greet
       #   uses: actions/hello-world-javascript-action@v1
