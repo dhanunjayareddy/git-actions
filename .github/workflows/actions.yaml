@@ -13,8 +13,8 @@ jobs:
           ls
           pwd
           ls
-          # docker build -t java-app .
-          # docker images 
+          docker build -t java-app .
+          docker images 
       # - name: simple actions
       #   id: greet
       #   uses: actions/hello-world-javascript-action@v1
