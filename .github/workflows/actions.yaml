@@ -13,11 +13,11 @@ jobs:
           ls
           pwd
           ls
-          docker build -t dhanureddy/java-app:"${{ GITHUB_RUN_ID }}" .
+          docker build -t dhanureddy/java-app:$GITHUB_RUN_ID .
           docker images
       - name: docker push 
         run: |
-          docker push  dhanureddy/java-app:"${{ GITHUB_RUN_ID }}"
+          docker push  dhanureddy/java-app:$GITHUB_RUN_ID
       #for better usage need to add creds in secrets
       
       # - name: simple actions
